@@ -1,0 +1,75 @@
+[global]
+    monitor = "DP-3"
+    width = (380, 500)
+    height = (0, 500)
+    offset = (20, 20)
+    scale = 0
+    origin = top-right
+    notification_limit = 20
+    corner_radius = 15
+    indicate_hidden = yes
+    
+    progress_bar = true
+    progress_bar_min_width = 380
+    progress_bar_max_width = 380
+    progress_bar_corner_radius = 4
+    progress_bar_height = 10
+
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 0
+    frame_width = 2
+    gap_size = 0
+    separator_color = frame
+    separator_height = 2
+
+    font = "Inter 12"
+    line_height = 0
+    markup = full
+    alignment = left
+    vertical_alignment = center
+
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = false
+
+    icon_theme = "rose-pine-icons"
+    enable_recursive_icon_lookup = true
+    min_icon_size = 32
+    max_icon_size = 100
+    icon_corner_radius = 0
+
+    background = "#26233a"
+    foreground = "#e0def4"
+
+    mouse_left_click = do_action, close_current
+    mouse_right_click = close_current
+    mouse_middle_click = close_all
+
+# Override discord urgency
+[discord]
+    desktop_entry = vesktop
+    urgency = low
+
+[urgency_low]
+    background = "#191724"
+    highlight = "#9ccfd8"
+    frame_color = "#524f67"
+    default_icon = "dialog-information"
+    format = "<span foreground='#908caa'>%a</span>\n<b><span foreground='#ebbcba'>%s</span></b>\n%b"
+
+[urgency_normal]
+    background = "#362e3c"
+    highlight = "#f6c177"
+    frame_color = "#f6c177"
+    default_icon = "dialog-warning"
+    format = "<b><span foreground='#f6c177'>%s</span></b>\n%b"
+
+[urgency_critical]
+    background = "#35263d"
+    highlight = "#eb6f92"
+    frame_color = "#eb6f92"
+    default_icon = "dialog-error"
+    format = "<b><span foreground='#eb6f92'>%s</span></b>\n%b"

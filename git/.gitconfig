@@ -1,0 +1,10 @@
+[user]
+	name = chris
+	email = 62446202+5xp@users.noreply.github.com>
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJouqUaT/FJ3j5J6V/yNNn7J77TztqjCSqNF6WG6cMs9
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+[commit]
+	gpgsign = true
