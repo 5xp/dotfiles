@@ -120,8 +120,7 @@ compinit
 # End of lines added by compinstall
 
 # fzf bindings
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
@@ -131,10 +130,21 @@ export FZF_DEFAULT_OPTS="
 	--color=border:#403d52,header:#31748f,gutter:#191724
 	--color=spinner:#f6c177,info:#9ccfd8
 	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+
 # aliases
 alias vim="nvim"
 alias vi="nvim"
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+if [ -n "${XDG_CONFIG_HOME:-}" ]; then
+  export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+else
+  export NVM_DIR="$HOME/.nvm"
+fi
 
+if [ -s /usr/share/nvm/init-nvm.sh ]; then
+  . /usr/share/nvm/init-nvm.sh
+elif [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
+  . "$NVM_DIR/bash_completion"
+fi
